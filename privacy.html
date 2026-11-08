@@ -1,49 +1,197 @@
 <!doctype html>
 <html lang="tr">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Gizlilik Politikası | TırıVırı Puantaj</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Söz Ustası - Gizlilik Politikası</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georgia&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-      :root { font-family: Inter, system-ui, sans-serif; color: #1f2937; background: #f7faf8; }
-      body { margin: 0; }
-      header { background: #0d5138; color: #fff; padding: 56px 24px; }
-      header div, main { max-width: 780px; margin: auto; }
-      h1 { margin: 0 0 8px; font-size: clamp(2rem, 7vw, 3rem); letter-spacing: -.04em; }
-      header p { margin: 0; color: #c9ead8; }
-      main { background: #fff; margin-top: 32px; margin-bottom: 48px; padding: 36px; border-radius: 20px; box-shadow: 0 12px 35px #17352b12; }
-      h2 { margin-top: 38px; color: #0d5138; font-size: 1.25rem; }
-      p, li { line-height: 1.7; color: #4b5563; }
-      a { color: #087443; }
-      .updated { padding: 12px 14px; border-radius: 10px; background: #eaf8ef; color: #175d3b; font-size: .9rem; }
+      :root {
+        --bg-grad: radial-gradient(circle at 50% 10%, #0d1e2e 0%, #070f17 100%);
+        --navy-900: #070f17;
+        --navy-800: #101c2c;
+        --gold-500: #d9a441;
+        --gold-300: #f1c96a;
+        --text-color: #fff9ef;
+        --text-muted: rgba(255, 249, 239, 0.72);
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg-grad);
+        color: var(--text-color);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+      }
+
+      main {
+        width: 100%;
+        max-width: 760px;
+        background: rgba(16, 28, 44, 0.65);
+        border: 1px solid rgba(217, 164, 65, 0.24);
+        border-radius: 24px;
+        padding: 48px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        box-sizing: border-box;
+      }
+
+      .header-area {
+        text-align: center;
+        border-bottom: 1px solid rgba(217, 164, 65, 0.18);
+        padding-bottom: 32px;
+        margin-bottom: 40px;
+        position: relative;
+      }
+
+      .logo-icon {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 16px;
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+      }
+
+      h1 {
+        font-family: 'Georgia', serif;
+        font-size: clamp(28px, 5vw, 36px);
+        font-weight: 900;
+        margin: 0 0 8px;
+        color: var(--gold-300);
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .last-updated {
+        font-size: 13px;
+        color: var(--gold-500);
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      p {
+        font-size: 15px;
+        line-height: 1.7;
+        color: var(--text-muted);
+        margin: 0 0 24px;
+      }
+
+      .intro-card {
+        background: rgba(217, 164, 65, 0.06);
+        border-left: 3px solid var(--gold-500);
+        padding: 16px 20px;
+        border-radius: 4px 12px 12px 4px;
+        margin-bottom: 36px;
+      }
+
+      .intro-card p {
+        margin: 0;
+        color: var(--text-color);
+        font-weight: 500;
+      }
+
+      h2 {
+        font-family: 'Georgia', serif;
+        font-size: 20px;
+        color: var(--gold-300);
+        margin: 36px 0 14px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        padding-bottom: 6px;
+      }
+
+      h2::before {
+        content: "✦";
+        color: var(--gold-500);
+        font-size: 16px;
+      }
+
+      ul {
+        margin: 0 0 24px;
+        padding-left: 20px;
+      }
+
+      li {
+        color: var(--text-muted);
+        margin-bottom: 10px;
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .footer-note {
+        text-align: center;
+        margin-top: 48px;
+        padding-top: 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        font-size: 12px;
+        color: rgba(255, 249, 239, 0.45);
+      }
+
+      @media (max-width: 600px) {
+        main {
+          padding: 24px;
+          border-radius: 16px;
+        }
+        h1 {
+          font-size: 24px;
+        }
+      }
     </style>
   </head>
   <body>
-    <header><div><h1>Gizlilik Politikası</h1><p>TırıVırı Puantaj</p></div></header>
     <main>
-      <p class="updated">Son güncelleme: 30 Eylül 2026</p>
-      <p>TırıVırı Puantaj, çalışan, proje, puantaj ve ödeme kayıtlarını cihazınızda yönetmenize yardımcı olur. Bu politika, uygulamanın hangi bilgileri nasıl işlediğini açıklar.</p>
+      <div class="header-area">
+        <img class="logo-icon" src="/favicon.png" alt="Söz Ustası Logo" onerror="this.style.display='none'" />
+        <h1>Söz Ustası</h1>
+        <div class="last-updated">Gizlilik Politikası</div>
+      </div>
 
-      <h2>Toplanan ve saklanan bilgiler</h2>
-      <p>Uygulamaya girdiğiniz çalışan adları, çalışma kayıtları, ücret, proje ve ödeme bilgileri uygulamanın işlevlerini sağlamak için cihazınızda yerel olarak saklanır. Bu kayıtlar uygulama geliştiricisinin sunucularına gönderilmez.</p>
+      <div class="intro-card">
+        <p>Son Güncelleme: 13 Haziran 2026</p>
+      </div>
 
-      <h2>Reklamlar</h2>
-      <p>Uygulama Google AdMob ile reklam gösterebilir. Google, reklam sunumu, ölçüm, dolandırıcılığın önlenmesi ve uygun olduğunda kişiselleştirilmiş reklamlar için cihaz tanımlayıcıları ve teknik bilgiler işleyebilir. Reklam tercihlerinizi cihaz ve Google ayarlarınızdan yönetebilirsiniz. Ayrıntılar için <a href="https://policies.google.com/privacy">Google Gizlilik Politikası</a> sayfasını inceleyin.</p>
+      <p>Bu gizlilik politikası, <strong>Söz Ustası</strong> mobil uygulamasının veri toplama ve gizlilik ilkelerini açıklamaktadır. Kullanıcılarımızın gizliliğini korumak en yüksek önceliğimizdir.</p>
 
-      <h2>İzin ve onay</h2>
-      <p>Uygulama, geçerli olduğu bölgelerde reklam gösterimi öncesinde Google'ın kullanıcı mesajlaşma ve izin akışını kullanır. Onay vermemeyi veya tercihlerinizi değiştirmeyi seçebilirsiniz.</p>
+      <h2>1. Veri Toplama ve Kullanım</h2>
+      <p>Söz Ustası mobil uygulaması <strong>kişisel veya hassas kullanıcı verisi toplamaz</strong> ve satmaz; kullanıcı verisini üçüncü taraflarla ticari olarak paylaşmaz. Reklam gösterimi için Google AdMob hizmetini kullanır; Google, reklam kimliği ve cihaz bilgilerini kendi gizlilik politikasına göre işleyebilir.</p>
 
-      <h2>Verilerin silinmesi</h2>
-      <p>Uygulama içindeki ilgili silme seçenekleriyle kayıtlarınızı silebilirsiniz. Uygulamayı kaldırmak da cihazdaki yerel uygulama verilerinin silinmesine neden olabilir. Cihaz yedekleme ayarları bu davranışı etkileyebilir.</p>
+      <h2>2. Donanım ve Sistem İzinleri</h2>
+      <p>Uygulama, cihazınızın kritik güvenlik donanımlarına erişim talep etmez. Aşağıdaki hassas izinler oyunumuzda <strong>kesinlikle kullanılmamaktadır</strong>:</p>
+      <ul>
+        <li>Konum bilgisi (GPS)</li>
+        <li>Kamera ve mikrofon erişimi</li>
+        <li>Rehber (Kişiler) ve arama geçmişi erişimi</li>
+        <li>Dosya depolama veya galeri erişimi (Local ayarlar hariç)</li>
+      </ul>
+      <p>Reklam gösterimi için gerekli internet bağlantısı dışında ek izin talep edilmez.</p>
 
-      <h2>Çocukların gizliliği</h2>
-      <p>Uygulama çocuklara yönelik değildir ve 13 yaş altındaki çocuklardan bilerek kişisel bilgi toplamak amacıyla tasarlanmamıştır.</p>
+      <h2>3. Veri Saklama ve Yerel Depolama</h2>
+      <p>Oyun içi ilerleme seviyeleriniz, topladığınız mühürler, puanlar ve ayar tercihleriniz <strong>yalnızca cihazınızın yerel hafızasında (Local Storage)</strong> saklanır. Bu veriler herhangi bir harici sunucuya veya bulut sistemine aktarılmaz. Oyunu cihazınızdan kaldırdığınızda, tüm yerel ilerleme verileri de otomatik olarak silinir.</p>
 
-      <h2>Politika değişiklikleri</h2>
-      <p>Bu politika zaman zaman güncellenebilir. Güncel sürüm her zaman bu sayfada yayımlanır.</p>
+      <h2>4. Reklamlar ve Gizlilik Tercihleri</h2>
+      <p>Uygulama yalnızca oyuncunun isteğiyle gösterilen ödüllü reklamlar (ipucu, harf açma, İkinci Şans) kullanır; zorunlu interstitial veya banner reklam göstermez. Reklam gösterimi için Google'ın User Messaging Platform (UMP) izin akışı kullanılır; gerektiğinde karşınıza çıkan izin formuyla reklam kişiselleştirme tercihlerinizi yönetebilirsiniz. İzinlerinizi sonradan değiştirmek için Ayarlar &gt; Reklam Gizlilik Tercihleri bölümünü kullanabilirsiniz. Google'ın reklam gizlilik ilkeleri için <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a> adresini inceleyebilirsiniz.</p>
 
-      <h2>İletişim</h2>
-      <p>Gizlilikle ilgili sorularınız için <a href="mailto:derebasi386@gmail.com">derebasi386@gmail.com</a> adresine ulaşabilirsiniz.</p>
+      <h2>5. Üçüncü Taraf Entegrasyonları</h2>
+      <p>Tek üçüncü taraf yazılım entegrasyonu, Google Mobile Ads SDK'sıdır (AdMob). Harici analiz (Analytics), kullanıcı hesabı veya diğer veri toplayıcı servis entegrasyonu bulunmamaktadır.</p>
+
+      <h2>6. Çocukların Gizliliği</h2>
+      <p>Söz Ustası 13 yaş ve üzeri kullanıcılar için tasarlanmıştır ve 13 yaşın altındaki çocuklara yönelik değildir. 13 yaşın altındaki hiçbir kullanıcıdan bilerek veya isteyerek kişisel bilgi toplamıyoruz. Reklamlar genel kitle olarak işaretlenir ve reklam içeriği en fazla &quot;ebeveyn rehberliği&quot; düzeyiyle sınırlandırılır; uygulama çocuklara yönelik reklam işaretlemesi kullanmaz. 13 yaşın altında bir çocuğun uygulamayı kullandığını fark ederseniz, Google Play geliştirici profilimizdeki destek adresinden bize bildirebilirsiniz.</p>
+
+      <h2>7. İletişim ve Destek</h2>
+      <p>Gizlilik ilkelerimiz hakkında sorularınız veya geri bildirimleriniz için Google Play Store geliştirici profilimizde yayımlanan resmi destek e-posta adresimiz üzerinden bizimle irtibata geçebilirsiniz.</p>
+
+      <div class="footer-note">
+        © 2026 Söz Ustası. Tüm hakları saklıdır.
+      </div>
     </main>
   </body>
 </html>
